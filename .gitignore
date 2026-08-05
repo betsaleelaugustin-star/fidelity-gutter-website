@@ -1,0 +1,10 @@
+# Source/staging photos not used by the live site (only images/ is referenced in index.html)
+/pictures/
+*.jpeg
+*.png
+*.jpg
+!images/**
+
+# OS/editor clutter
+.DS_Store
+Thumbs.db
