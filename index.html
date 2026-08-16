@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Fidelity Gutter Cleaning Services LLC | Gutter, Roof &amp; Exterior Cleaning in Greater Boston, MA</title>
 <meta name="description" content="Fully insured gutter cleaning, power washing, roof and exterior cleaning for homes and businesses across Greater Boston, MA. Safety is the priority. Quality is the standard. Free estimates.">
 <link rel="canonical" href="https://www.fidelitygutter.com/">
@@ -29,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" integrity="sha384-cPFV+/abYd3INVFHPmSKpBmcnH+Q+bTZW7dv/EiuShUNPkHyFmRF8PsL7Ibfvunk" crossorigin="anonymous" defer></script>
 
 <script type="application/ld+json">
 {
@@ -241,6 +242,12 @@ body.drawer-open{overflow:hidden}
   .hero .wrap{grid-template-columns:1fr}
   .hero-visual{height:320px;margin-top:10px}
   .hero-text{padding-left:20px}
+  #sshBg{background-image:url('images/about-team.png');background-size:cover;background-position:center 14%}
+  .hero-bg{background:
+    linear-gradient(180deg,rgba(5,11,24,.8) 0%,rgba(5,11,24,.52) 24%,rgba(5,11,24,.45) 50%,rgba(5,11,24,.62) 78%,rgba(5,11,24,.78) 100%),
+    radial-gradient(circle at 50% 0%,rgba(200,16,46,.16),transparent 48%),
+    radial-gradient(circle at 50% 100%,rgba(27,111,224,.14),transparent 48%);
+  }
 }
 @media (max-width:600px){
   .hero{padding-top:120px}
@@ -930,6 +937,7 @@ fieldset.field legend{font-size:.78rem;font-weight:700;letter-spacing:.05em;text
       <div class="rv d1">
         <form class="est-form ms-form" id="estimateForm" novalidate action="https://formspree.io/f/mlgqbnae" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_subject" value="New Free Estimate Request - Fidelity Gutter Cleaning Services">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="ms-progress">
             <div class="ms-progress-top" role="status" aria-live="polite"><span class="ms-progress-label">Step <span id="msStepNum">1</span> of 3</span><span class="ms-progress-name" id="msStepName">You &amp; Your Home</span></div>
             <div class="ms-progress-bar"><div class="ms-progress-fill" id="msFill"></div></div>
@@ -1129,7 +1137,7 @@ fieldset.field legend{font-size:.78rem;font-weight:700;letter-spacing:.05em;text
     <div class="about-grid">
       <div class="about-photo rv">
         <div class="about-photo-frame">
-          <img src="images/about-team.png" alt="Frednel Angenord and Kenty Joseph, co-founders of Fidelity Gutter Cleaning Services LLC, a locally owned gutter cleaning, roof cleaning, and power washing company serving Greater Boston, MA" width="1200" height="1200" loading="lazy" style="object-position:78% 20%">
+          <img src="images/about-team.png" alt="Frednel Angenord and Kenty Joseph, co-founders of Fidelity Gutter Cleaning Services LLC, a locally owned gutter cleaning, roof cleaning, and power washing company serving Greater Boston, MA" width="1200" height="1200" loading="lazy" style="object-position:center 12%">
           <div class="about-names"><b>Frednel Angenord &amp; Kenty Joseph</b><span>Co-Founders</span></div>
         </div>
       </div>
@@ -1170,6 +1178,7 @@ fieldset.field legend{font-size:.78rem;font-weight:700;letter-spacing:.05em;text
         <form class="careers-form" id="careersForm" novalidate action="https://formspree.io/f/xzdnrgob" method="POST">
           <input type="hidden" name="form_type" value="careers_application">
           <input type="hidden" name="_subject" value="New Career Application - Fidelity Gutter Cleaning Services">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-row">
             <div class="field"><label for="cf-name">Full Name <span class="req">*</span></label><input id="cf-name" name="name" type="text" autocomplete="name" required><span class="form-err" data-err="cf-name"></span></div>
             <div class="field"><label for="cf-phone">Phone <span class="req">*</span></label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" required><span class="form-err" data-err="cf-phone"></span></div>
@@ -1228,6 +1237,7 @@ fieldset.field legend{font-size:.78rem;font-weight:700;letter-spacing:.05em;text
       </div>
       <form class="partner-form" id="partnerForm" novalidate action="https://formspree.io/f/xvzearlq" method="POST">
         <input type="hidden" name="_subject" value="New Partnership Inquiry - Fidelity Gutter Cleaning Services">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-row">
           <div class="field"><label for="pf-company">Business Name <span class="req">*</span></label><input id="pf-company" name="business_name" type="text" required><span class="form-err" data-err="pf-company"></span></div>
           <div class="field"><label for="pf-name">Contact Name <span class="req">*</span></label><input id="pf-name" name="contact_name" type="text" autocomplete="name" required><span class="form-err" data-err="pf-name"></span></div>

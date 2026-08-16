@@ -1,0 +1,39 @@
+# ===== Force HTTPS =====
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ===== Security headers =====
+<IfModule mod_headers.c>
+  # Force browsers to remember HTTPS for this site (1 year)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Stop the site from being framed by another site (clickjacking protection)
+  Header always set X-Frame-Options "DENY"
+
+  # Stop browsers from guessing/mis-sniffing file types
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Don't leak the full referring URL to third-party links
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Disable browser features this site never uses
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+  # Only allow resources from this site, Google Fonts, unpkg (icon font), esm.sh (globe
+  # visualization module), and Formspree (forms). 'unsafe-inline' is required because this
+  # site is intentionally a single self-contained HTML file with inline <style>/<script> —
+  # splitting those out would be a much larger architecture change. This CSP still blocks
+  # any unauthorized third-party script/resource from loading if one were ever injected.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data:; connect-src 'self' https://formspree.io https://esm.sh; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+</IfModule>
+
+# ===== Block directory listing =====
+Options -Indexes
+
+# ===== Block access to dotfiles (.git, .gitignore, .htaccess itself, etc.) =====
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
