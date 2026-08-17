@@ -319,9 +319,9 @@ body.drawer-open{overflow:hidden}
 .legal-modal-close:hover{background:#e6e9ee}
 .legal-updated{font-size:.76rem;color:#8b93a3;margin-top:18px}
 
-.lightbox{position:fixed;inset:0;background:rgba(5,11,24,.96);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s}
+.lightbox{position:fixed;inset:0;background:rgba(5,11,24,.96);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .lightbox.open{opacity:1;pointer-events:auto}
-.lightbox-inner{max-width:480px;width:90%;text-align:center}
+.lightbox-inner{max-width:480px;width:90%;text-align:center;margin:76px auto 32px}
 .lb-media{position:relative;height:min(72vh,640px);border-radius:12px;overflow:hidden;background:var(--navy-2);touch-action:pan-y;cursor:grab}
 .lb-media.grabbing{cursor:grabbing}
 .lb-track{display:flex;height:100%;transform:translateX(0);transition:transform .45s cubic-bezier(.22,.8,.25,1)}
@@ -339,7 +339,11 @@ body.drawer-open{overflow:hidden}
 .lb-dot:focus-visible{box-shadow:0 0 0 3px rgba(200,16,46,.5)}
 .lightbox h3{font-family:var(--display);font-size:2rem;color:#fff;margin-top:20px;text-transform:uppercase}
 .lightbox p{color:#b6bfcc;margin-top:8px}
-.lightbox-close{position:absolute;top:26px;right:32px;font-size:2rem;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.lightbox-close{position:fixed;top:16px;right:16px;z-index:201;font-size:2rem;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(5,11,24,.55);border-radius:50%}
+@media (max-width:600px){
+  .lightbox-inner{margin:64px auto 24px}
+  .lb-media{height:min(52vh,480px)}
+}
 
 /* ===== Power Washing Spotlight ===== */
 .spotlight{background:var(--navy);padding:110px 0}
@@ -607,6 +611,7 @@ fieldset.field legend{font-size:.78rem;font-weight:700;letter-spacing:.05em;text
 <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation menu" aria-hidden="true">
   <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="ph ph-x"></i></button>
   <div class="drawer-links">
+    <a href="#top">Home</a>
     <a href="#services">Services</a>
     <a href="#gallery">Projects</a>
     <a href="#reviews">Reviews</a>
